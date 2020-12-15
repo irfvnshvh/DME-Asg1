@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="imgCon">
+    <ion-card>
+      <ion-icon name="happy"></ion-icon>
+      </ion-card>
+    <ion-label>
+      <h1 class="name">John Doe</h1>
+      <p>21</p>
+      <p slot="end">Singapore</p>
+    </ion-label>
+  </div>
+
+
+
+
+  <div id="container">
+  <ion-label>
+    <ion-icon slot="start"></ion-icon>
+    <h1>History</h1>
+  </ion-label>
+  <ion-item *ngFor="let recipe of recipes" lines="full">
+    <ion-icon slot="end"></ion-icon>
+    <ion-label>{{ recipe.id }}</ion-label>
+    <ion-icon name="trash" slot="end"></ion-icon>
+  </ion-item>
+</div>
+
+
+  <div id="containerBottom">
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/folder/Inbox']" tab="schedule">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Tracker</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button [routerLink]="['/recipes']" tab="speakers">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label >Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </div>
+</ion-content>
